@@ -1,0 +1,16 @@
+<html>
+  <header>
+  </header>
+  <body>
+    {% include "header.html" %}
+        <h1>Team Details</h1>
+        <table>
+          <tr><td>Name</td><td>{{ team["name"] }}</td></tr>
+          <tr><td>Region</td><td>{{ team["Region"] }}</td></tr>
+          <tr><td>Achievements</td><td>{{ team["Achievements"] }}</td></tr>
+          <tr><td>Record</td><td>{{ team["Record"] }}</td></tr>
+        </table>
+        <a href="/teams">Back</a>
+    {% include "footer.html" %}
+  </body>
+</html>

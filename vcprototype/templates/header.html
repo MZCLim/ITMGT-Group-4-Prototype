@@ -1,0 +1,19 @@
+<html>
+  <header>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <style>
+      .footer {
+        font-size:10px;
+      }
+    </style>
+  </header>
+  <body>
+    <a href='/home'>Home</a> | <a href='/teams'>Team</a> |
+    <a href='/organization'>Organization</a> | <a href='/tiers'>Tiers</a> |
+    {% if session["user"] is defined %}
+      Welcome, <a href="/profile">{{ session["user"]["first_name"] }}</a>.
+      <a href='/logout'>Logout</a> |
+    {% else %}
+      <a href='/login'>Login</a>
+    {% endif %}
+    <p/>

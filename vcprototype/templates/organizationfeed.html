@@ -1,0 +1,17 @@
+<html>
+  <header>
+  </header>
+  <body>
+    {% include "header.html" %}
+      <h1>{{ team["name"] }}</h1>
+        <table>
+          {% for text in message_history %}
+          <tr>
+            <td>{{ text["message"] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <a href="/organization">Back</a>
+    {% include "footer.html" %}
+  </body>
+</html>

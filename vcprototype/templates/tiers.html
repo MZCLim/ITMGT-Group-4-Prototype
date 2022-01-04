@@ -1,0 +1,55 @@
+<html>
+  <header>
+  </header>
+  <body>
+    {% include "header.html" %}
+      <h1>Tier Plans</h1>
+      <div>Unlock higher tiers for more features and perks on the platform! You will have to pay monthly</div>
+      <br>
+      <table>
+        <tr><th>Player</th><th>Team</th><th>Organization</th></tr>
+        <tr>
+          <td>&#x2713; Player Profile and Satistics</td>
+          <td>&#x2713; Player Profile and Satistics</td>
+          <td>&#x2713; Player Profile and Satistics</td>
+        </tr>
+        <tr>
+          <td>&#x2713; Player Matching</td>
+          <td>&#x2713; Player Matching</td>
+          <td>&#x2713; Player Matching</td>
+        </tr>
+        <tr>
+          <td>&#x2717; Arrange and Plan Scrimmiages <br> or Pick-Up-Games</td>
+          <td>&#x2713; Arrange and Plan Scrimmiages <br> or Pick-Up-Games</td>
+          <td>&#x2713; Arrange and Plan Scrimmiages <br> or Pick-Up-Games</td>
+        </tr>
+        <tr>
+          <td>&#x2717; Join/Host Tournaments</td>
+          <td>&#x2713; Join/Host Tournaments</td>
+          <td>&#x2713; Join/Host Tournaments</td>
+        </tr>
+        <tr>
+          <td>&#x2717; Organization Profile</td>
+          <td>&#x2717; Organization Profile</td>
+          <td>&#x2713; Organization Profile</td>
+        </tr>
+        <tr>
+          <td>FREE</td>
+          <td>PHP 500</td>
+          <td>PHP 1000</td>
+        </tr>
+        <tr>
+          <td><a href="tiers">AVAILED</a></td>
+        {% for tier in tier_list %}
+          <td><a href="confirmpurchase?code={{tier["code"]}}">PURCHASE</a></td>
+        {% endfor %}
+        </tr>
+      </table>
+      <br>
+      <h5>How to Purchase</h5>
+      <div>1. Click the button "Purchase" to be led to the payment page</div>
+      <div>2. Choose your payment method: we accept Credit Card, Gcash, and Bank Transfer.</div>
+      <div>3. Enjoy your available perks! Happy gaming!</div>
+    {% include "footer.html" %}
+  </body>
+</html>

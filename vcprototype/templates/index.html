@@ -1,0 +1,24 @@
+<html>
+  <header>
+  </header>
+  <body>
+    {% include "header.html" %}
+      {% if session["user"] is defined %}
+        <h1>{{ session["user"]["first_name"] }}</h1>
+        <table>
+          <form action="/addmessages" method="POST">
+            <td><input type="text" name="message"></td>
+            <td><input type="submit" value="Post"></td>
+          </form>
+          {% for text in message_history %}
+          <tr>
+            <td>{{ text["message"] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+        <h1>Login to your account!</h1>
+      {% endif %}
+    {% include "footer.html" %}
+  </body>
+</html>

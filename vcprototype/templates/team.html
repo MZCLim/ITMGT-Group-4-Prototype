@@ -1,0 +1,14 @@
+<html>
+  <header>
+  </header>
+  <body>
+    {% include "header.html" %}
+      <h1>Team</h1>
+      <table>
+        {% for team in team_list %}
+        <ul><li><a href="teamdetails?code={{team["code"]}}">{{team["name"]}}</a></li></ul>
+        {% endfor %}
+      </table>
+    {% include "footer.html" %}
+  </body>
+</html>

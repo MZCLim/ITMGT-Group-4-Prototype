@@ -1,0 +1,35 @@
+{% include "header.html" %}
+  <h1>Purchase</h1>
+    {% if session["cart"] is defined %}
+      <table>
+        <tr><th>Tier</th><th>Price<th></tr>
+          {% for item in session["cart"].values() %}
+          <tr>
+            <form action="/paymentmethod" method="POST">
+              <tr>
+                <td><input type="hidden" name="code" value={{ item["code"] }}>
+                    {{ item["name"] }}</td>
+                <td>{{ item["subtotal"] }}</td>
+                </tr>
+              <tr>
+                <td><label for="payment">Choose payment method:</label></td>
+              </tr>
+              <tr>
+                <td>
+                  <select id="payment" name="payment">
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Gcash">Gcash</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                  </select>
+                </td>
+                <td><input type="submit" value="Confirm"></td>
+              </tr>
+            </form>
+          </tr>
+          {% endfor %}
+      </table>
+      <a href="checkout">Checkout</a>
+    {% else %}
+      <div>Your cart is empty</div>
+    {% endif %}
+{% include "footer.html" %}

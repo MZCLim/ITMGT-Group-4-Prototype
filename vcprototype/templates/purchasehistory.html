@@ -1,0 +1,21 @@
+{% include "header.html" %}
+  <body>
+    {% if session["user"] is defined %}
+      <h1>{{ session["user"]["first_name"] }}'s Purchase History</h1>
+        <table>
+          <tr><th>Code</th><th>Name</th><th>Subtotal</th><th>Paymentmethod</th></tr>
+          {% for purchase in purchase_history %}
+          <tr>
+            <td>{{ purchase["code"] }}</td>
+            <td>{{ purchase["name"] }}</td>
+            <td>{{ purchase["subtotal"] }}</td>
+            <td>{{ purchase["paymentmethod"] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+      <div>Please log in to your account.</div>
+    {% endif %}
+    <a href="profile">Back<a>
+  <body>
+{% include "footer.html" %}

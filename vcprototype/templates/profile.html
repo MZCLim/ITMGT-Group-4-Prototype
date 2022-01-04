@@ -1,0 +1,17 @@
+{% include "header.html" %}
+  <body>
+    <h1>{{ session["user"]["first_name"] }}'s Profile</h1>
+      <table>
+        <tr><th>Email/Username</th><th>First Name</th><th>Last Name</th><th>Tier</th></tr>
+        <tr>
+          <td>{{ session["user"]["username"] }}</td>
+          <td>{{ session["user"]["first_name"] }}</td>
+          <td>{{ session["user"]["last_name"] }}</td>
+          <td>{{ session["user"]["tier"] }}</td>
+        </tr>
+      </table>
+    <div><a href="/profile/changepassword">Change Password</a></div>
+    <br>
+    <div><a href="/purchasehistory">View Purchase History</a></div>
+  </body>
+{% include "footer.html" %}

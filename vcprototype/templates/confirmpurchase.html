@@ -1,0 +1,14 @@
+<html>
+  {% include "header.html" %}
+      <h1>Confirm Purchase</h1>
+      <table>
+          <tr><td>Code</td><td>{{ code }}</td></tr>
+          <tr><td>Tier</td><td>{{ tier["name"] }}</td></tr>
+          <tr><td>Price</td><td>{{ tier["price"] }}</td></tr>
+          {% if session["user"] is defined %}
+          <tr><td><a href="/purchasetier?code={{ code }}">Purchase</a></td></tr>
+          {% endif %}
+      </table>
+      <a href="/tiers">Back</a>
+  {% include "footer.html" %}
+</html>
